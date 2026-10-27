@@ -4,7 +4,7 @@
 </picture>
 
 <p align="center">
-  <a href="https://gravery.dev"><img alt="Portfolio" src="https://img.shields.io/badge/portfolio-gravery.github.io-ef233c?style=flat-square"></a>
+  <a href="https://gravery.dev"><img alt="Portfolio" src="https://img.shields.io/badge/portfolio-gravery.dev-ef233c?style=flat-square"></a>
   <a href="mailto:contact@gravery.dev"><img alt="Email" src="https://img.shields.io/badge/email-contact%40gravery.dev-3f3f46?style=flat-square&logo=gmail&logoColor=white"></a>
   <img alt="UTC−3" src="https://img.shields.io/badge/UTC%E2%88%923-overlaps%20US%20hours-3f3f46?style=flat-square">
 </p>
