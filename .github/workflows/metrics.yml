@@ -1,0 +1,40 @@
+name: Metrics
+
+on:
+  schedule: [{ cron: "17 9 * * *" }] # daily, 06:17 in São Paulo
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/metrics.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Contribution calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.isocalendar.svg
+          # Classic personal access token with the `repo` and `read:user` scopes,
+          # saved as a repository secret named METRICS_TOKEN.
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_timezone: America/Sao_Paulo
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - name: Languages
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_timezone: America/Sao_Paulo
+          plugin_languages: yes
+          plugin_languages_limit: 6
+          plugin_languages_details: percentage
+          plugin_languages_ignored: html, css, scss, shell, dockerfile, makefile
+          plugin_languages_skipped: Gravery/Gravery
